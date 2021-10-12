@@ -27,3 +27,14 @@ body{
 .temperature{
     flex-direction: column;
 }
+.degree-section{
+    display: flex;
+}
+.degree-section span{
+ margin: 10px;
+ font-size: 30px;
+ cursor: pointer
+}
+.degree-section h2{
+    font-size :40px;
+}
