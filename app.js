@@ -34,6 +34,21 @@ form.addEventListener('submit', (e)=> {
         fetchWeatherData()
         search.value = ""
         app.style.opacity ="0"
-
     }
+    //prevents default form behaving patters
+    e.preventDefault();
 })
+// the function that returns the day of the week
+
+function dayOfWeek(day, month, year){
+    const weekDay = [
+        "Sunday",
+        "Monday",
+        "TuesDay",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ]; 
+    return weekday[new Date(`${day},${month},${year}`.getDay())]
+}
