@@ -54,9 +54,30 @@ function dayOfWeek(day, month, year){
 }
 
 function fetchWeatherData(){
-    fetch(`http://api.weatherapi.com/v1/current.json?key=d579175e97444fc0b54111008211310=${cityInput}`)
+    fetch(`http://api.weatherapi.com/v1/current.jsonkey=d579175e97444fc0b54111008211310=${cityInput}`)
     .then(response => response.json())
     .then(data =>{
         console.log(data)
+        temp.innerHTML = data.current.temp_f + "&#176;"
+        conditionOutput.innerHTML = data.current.condition.text;
+        const date = data.location.localtime;
+        const y = parseInt(date.substring(0,4))
+        //parsing the string returning the integre
+        const m = parseInt(date.substring(5,2))
+        const d = parseInt(date.substring(8,2))
+        const time = date.substring(11);
+        dateOutput.innerHTML =`${dayOfWeek(d,m,y)} ${d},${m},${y}`
+        timeOutput.innerHTML = time;
+        nameOutput.innerHTML = data.locatio.name;
+        const icon= data.current.condition.icon.substring(
+            "//cdn.weatherapi.com/weather/64x64/".length)
+            icon.src = "./icons" + iconId
+            cloudOutput.innerHTM = data.current.cloud + "%";
+            humidityOutput.innerHTML = data.current.humidty + "%"
+            windOutput.innerHTML = data.current.wind_mph + "mph"
+            
     })
 }
+
+// maybe look at using createTextNode instead of innerHtml... 
+
