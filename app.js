@@ -21,5 +21,19 @@ cities.forEach((city)=> {
         cityInput = e.target.innerHtml 
 // this is the function below that fetches the weather data from the api call.
         fetchWeatherData()
+        app.style.opacity = "0"    
     })
+})
+// The submit event to the form below
+
+form.addEventListener('submit', (e)=> {
+    if(search.value.length == 0 ){
+        alert('Please enter a city name')
+    }else{
+        cityInput = search.value
+        fetchWeatherData()
+        search.value = ""
+        app.style.opacity ="0"
+
+    }
 })
