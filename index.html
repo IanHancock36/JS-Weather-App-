@@ -8,18 +8,42 @@
     <link rel ='stylesheet' href='./style.css' />
 </head>
 <body>
-  <div class ='location'>
-      <h1 class ='location-timezone'>TimeZone</h1>
-    <p>Icon</p>
+<div class="weather-app">
+  <div class="container">
+    <h3 class ='brand'>The Weather</h3>
+    <div>
+      <h1 class ='temp'>32&#176</h1>
+      <div class ='city-time'>
+        <h1 class ='name'>Nikiski</h1>
+        <small>
+          <span class='time'>9999</span>
+          -
+          <span class ='date'>
+            Tuesday October 14
+          </span>
+        </small>
+        <div class="weather">
+          <img
+          src = '/icons/day/113.png'
+          class= 'icon'
+          alt = 'icon'
+          width='50'
+          height='50'
+          />
+          <span class ='condition'> Cloudy </span>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <form id='locationInput'>
+        <input 
+        type='text'
+        class='search'
+        placeholder="Search Location..."
+        />
+      </form>
+    </div>
   </div>
-    <div class="temperature">
-        <div class ='degree-section'>
-    <h2 class = 'temperature-degree'> 34 </h2>
-    <span>F</span>
-</div>
-    <div class="temperature-description">It is kinda cold</div>
-    
-    <script src = 'app.js'></script>
 </div>
 </body>
 </html>
